@@ -4,20 +4,23 @@ const show = document.getElementById("results");
 //userInput = userInput.value;
 
 
+
 userInput.addEventListener("keyup", function(e) {
     e.preventDefault();
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
     .then(res => res.json())
     .then(data => {
-        show.innerHTML = `<img src="${data.drinks}"/>`
-    }
-    );
+        show.innerHTML = `<img src="${data.drinks[0].strDrinkThumb}">`;
+
+    })
 
 });
 
 
-        
+        /*{
+        show.innerHTML = `<img src="${data.drinks}"></>`
+    } */
 
 //{show.innerHTML = `<img src="${data.strImageSource}"/>`}
 
