@@ -1,8 +1,32 @@
  body {
      background: palevioletred;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+ }
+
+ input {
+     margin-bottom: 2rem;
+ }
+
+ #results {
+     display: grid;
+     grid-template-columns: auto auto auto;
+ }
+
+ .div-drink {
+     background-color: black;
+     width: 14rem;
+     height: 17rem;
+     margin: 1rem;
+ }
+
+ .title {
+     color: white;
  }
 
  .image {
-     width:8rem;
-     padding: 1rem;
+     width: 12rem;
+
  }

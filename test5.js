@@ -2,16 +2,26 @@ const userInput = document.getElementById("search");
 const show = document.getElementById("results");
 
 
-function create(image) {
-  const myImg = document.createElement('img');
-  //myImg.src = `${drinks[0].strDrinkThumb}`;
-  myImg.src = image;
+function create(title, image) {
 
+  const myDiv = document.createElement('div');
+  const h3 = document.createElement('h3');
+  const myImg = document.createElement('img');
+
+  myDiv.className = "div-drink"; 
+  h3.className = "title";
   myImg.className = "image";
 
+  myImg.src = image;
+ 
+
+  h3.innerHTML = title;
   myImg.innerHTML = image;
 
-  return myImg;
+  myDiv.appendChild(h3);
+  myDiv.appendChild(myImg);
+
+  return myDiv;
 
 }
 
@@ -41,15 +51,16 @@ userInput.addEventListener("keyup", async function(event){
 
 
     (drinks || []).forEach(function(drink){
+      const title = drink.strDrink;
       const image = drink.strDrinkThumb;
 
 
 
-      const myImg = create(image);
+      const myDiv = create(title, image);
 
-      show.appendChild(myImg);
+      show.appendChild(myDiv);
     });
 
     
-  }, 500);
+  }, 200);
 });
