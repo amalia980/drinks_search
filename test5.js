@@ -4,7 +4,10 @@ const show = document.getElementById("results");
 
 function create(image) {
   const myImg = document.createElement('img');
-  myImg.src = `${data.drinks.strDrinkThumb}`;
+  //myImg.src = `${drinks[0].strDrinkThumb}`;
+  myImg.src = image;
+
+  myImg.className = "image";
 
   myImg.innerHTML = image;
 
@@ -39,6 +42,7 @@ userInput.addEventListener("keyup", async function(event){
 
     (drinks || []).forEach(function(drink){
       const image = drink.strDrinkThumb;
+
 
 
       const myImg = create(image);

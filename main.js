@@ -11,7 +11,7 @@ userInput.addEventListener("keyup", function(e) {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
     .then(res => res.json())
     .then(data => {
-        show.innerHTML = `<img src="${data.drinks[0].strDrinkThumb}">`;
+        show.innerHTML = `${data.drinks[0]}`;
 
     })
 

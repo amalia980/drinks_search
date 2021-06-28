@@ -17,27 +17,33 @@ userInput.addEventListener("keyup", function(e) {
     }
     */
 
-
-
-    function insertImage(myTitle, urlToImage) {
-        const title = document.createElement('h2');
-        title.setAttribute(myTitle);
+    function insertImage(urlToImage) {
 
         const img = document.createElement('img');
         img.setAttribute("src", urlToImage);
         img.className = "image";
 
-        
-        show.appendChild(title);
         show.appendChild(img);
+
+        return img;
     }
-    
-    for (let i = 0; i < 7; i++) {
+
+    for (let i = 0; i < 6; i++) {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
         .then(res => res.json()
-        .then(data => insertImage(data.drinks[i].strDrink, data.drinks[i].strDrinkThumb)));
+        .then(data => insertImage(data.drinks[i].strDrinkThumb)));
+
+        if () {
+
+        }
     }
 
-
+/*
+    for (let i = 0; i < 6; i++) {
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+        .then(res => res.json()
+        .then(data => show.innerHTML = `<img src="${data.drinks[i].strDrinkThumb}"/>`));
+    }
+*/
 
 })
